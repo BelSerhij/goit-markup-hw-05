@@ -805,7 +805,7 @@ button:focus {
 input[type='checkbox']:checked + .modal-checkbox-label > .agreement-checkbox {
   background-color: #404bbf;
   border-color: #404bbf;
-  fill: #fff;
+  fill:#F4F4FD;;
   border: none;
 } 
 .modal-btn {
