@@ -78,7 +78,7 @@ h3 {
     padding-bottom: 120px;
 }
 
-.visually {
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -525,7 +525,7 @@ button:focus {
   border-radius: 4px;
   width: 264px;
   height: 40px;
-  background-color: #2e2f42;
+  background-color: transparent;
   padding: 8px 16px;
   color: #fff;
   font-size: 12px;
@@ -630,7 +630,6 @@ button:focus {
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn:hover,
 .modal-close-btn:focus {
@@ -640,7 +639,9 @@ button:focus {
     color:  #fff;
     border: none;
 }
-
+.modal-box-comment{
+    margin-bottom: 16px; 
+}
 .icon-close{
    stroke: currentColor;
    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
@@ -691,6 +692,9 @@ button:focus {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #2e2f42;
+    background-color: transparent; 
+    outline: transparent; 
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .modal-input::placeholder{
     font-size: 16px;        
@@ -698,11 +702,11 @@ button:focus {
     letter-spacing: 0.02em;
     color: #8e8f99;
 }
-.modal-input:focus{
-    outline: 1px solid #404bbf;   
+.modal-input:focus{  
+    border-color: #4D5AE5; 
 }
-.modal-input:focus + .modal-icon-person{ 
-    fill:#404bbf;       
+.modal-input:focus + .modal-icon-person{  
+    fill: #4D5AE5;      
 }
 .modal-input:hover{ 
     border-color: #404bbf;
@@ -726,7 +730,7 @@ button:focus {
 }  
 .modal-input-meassage{
     height: 120px;
-    padding: 12px; 
+    padding: 8px 16px; 
     resize: none;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
@@ -737,9 +741,11 @@ button:focus {
     font-size: 12px;        
     line-height: 1.17;
     letter-spacing: 0.04em; 
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }    
 .modal-input-meassage:focus{
-    outline: 1px solid #404bbf;
+    border-color: #4D5AE5; 
 } 
 .modal-input-meassage:hover{ 
     border-color: #404bbf;  
@@ -768,16 +774,40 @@ button:focus {
     padding-bottom: 24px;
 }
 .modal-checkbox-label{
-    font-size: 13px;        
-    line-height: 1.17;
-    letter-spacing: 0.04em;
-    color: #8e8f99; 
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
 }
-.modal-checkbox-span{
-    text-decoration: underline;
-     line-height: 1.13;
-    color: #4d5ae5;
-}   
+.agreement-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  cursor: pointer;
+  margin-right: 8px;
+  fill: transparent;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-checkbox-span {
+  color: #4d5ae5;
+  display: inline;
+  line-height: 1.33;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+input[type='checkbox']:checked + .modal-checkbox-label > .agreement-checkbox {
+  background-color: #404bbf;
+  border-color: #404bbf;
+  fill: #fff;
+  border: none;
+} 
 .modal-btn {
     background-color: #4d5ae5;
     font-weight: 500;
