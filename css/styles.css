@@ -771,7 +771,7 @@ button:focus {
     background-color: #404bbf;
 }    
 .form-agreement{
-    padding-bottom: 24px;
+    margin-bottom: 24px;
 }
 .modal-checkbox-label{
   font-size: 12px;
